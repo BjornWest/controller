@@ -37,12 +37,12 @@ input.onButtonPressed(Button.B, function () {
     if (mode == 0) {
         led.unplot(xPosition, yPosition)
         if (UpDown % 2 == 0) {
-            if (xPosition < 4) {
+            if (xPosition < 9) {
                 xPosition += 1
                 radio.sendValue("xPos", yPosition)
             }
         } else {
-            if (yPosition < 4) {
+            if (yPosition < 9) {
                 yPosition += 1
                 radio.sendValue("yPos", yPosition)
             }
