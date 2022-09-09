@@ -1,3 +1,9 @@
+function plot10x10 (x: number, y: number) {
+	
+}
+function Snake () {
+	
+}
 input.onButtonPressed(Button.A, function () {
     if (mode == 0) {
         led.unplot(xPosition, yPosition)
@@ -61,6 +67,9 @@ radio.onReceivedValue(function (name, value) {
         yTarget = value
     }
 })
+function unplot10x10 (x: number, y: number) {
+	
+}
 let UpDown = 0
 let yTarget = 0
 let xTarget = 0
