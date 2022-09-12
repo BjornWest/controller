@@ -44,7 +44,6 @@ input.onButtonPressed(Button.AB, function () {
     } else {
         led.unplot(xPosition, yPosition)
         UpDown += 1
-        mode = 1
         length = 1
         xpos = 2
         ypos = 3
@@ -75,11 +74,15 @@ input.onButtonPressed(Button.B, function () {
         if (UpDown % 2 == 0) {
             if (xPosition < 9) {
                 xPosition += 1
-                radio.sendValue("xPos", yPosition)
+                radio.sendValue("xPos", xPosition)
+                radio.sendValue("xPos", xPosition)
+                radio.sendValue("xPos", xPosition)
             }
         } else {
             if (yPosition < 9) {
                 yPosition += 1
+                radio.sendValue("yPos", yPosition)
+                radio.sendValue("yPos", yPosition)
                 radio.sendValue("yPos", yPosition)
             }
         }
