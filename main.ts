@@ -11,7 +11,7 @@ input.onButtonPressed(Button.A, function () {
                 radio.sendValue("xPos", xPosition)
             }
         } else {
-            if (yPosition > 0) {
+            if (yPosition > 0 && true) {
                 yPosition += -1
                 radio.sendValue("yPos", yPosition)
             }
@@ -79,7 +79,7 @@ input.onButtonPressed(Button.B, function () {
                 radio.sendValue("xPos", xPosition)
             }
         } else {
-            if (yPosition < 9) {
+            if (yPosition < 9 && true) {
                 yPosition += 1
                 radio.sendValue("yPos", yPosition)
                 radio.sendValue("yPos", yPosition)
@@ -153,6 +153,10 @@ radio.onReceivedValue(function (name, value) {
     }
     if (name == "yTarget") {
         yTarget = value
+    } else if (name == "cubeX") {
+        cubeX = value + 5
+    } else if (name == "cubeY") {
+        cubeY = value + 5
     } else {
     	
     }
@@ -174,6 +178,8 @@ let length = 0
 let direction = 0
 let canMove = 0
 let UpDown = 0
+let cubeY = 0
+let cubeX = 0
 let yTarget = 0
 let xTarget = 0
 let yPosition = 0
@@ -185,6 +191,8 @@ xPosition = 0
 yPosition = 0
 xTarget = -1
 yTarget = -1
+cubeX = -1
+cubeY = -1
 loops.everyInterval(500, function () {
     if (mode == 1) {
         snakeMove()
