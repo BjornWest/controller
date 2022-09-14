@@ -6,12 +6,12 @@ input.onButtonPressed(Button.A, function () {
     if (mode == 0) {
         led.unplot(xPosition, yPosition)
         if (UpDown % 2 == 0) {
-            if (xPosition > 0 && (xPosition - 1 != cubeX || yPosition != cubeY)) {
+            if (xPosition > 0 && (cubeX != 5 || (xPosition - 1 != cubeX || yPosition != cubeY))) {
                 xPosition += -1
                 radio.sendValue("xPos", xPosition)
             }
         } else {
-            if (yPosition > 0 && (xPosition != cubeX || yPosition - 1 != cubeY)) {
+            if (yPosition > 0 && (cubeY != 5 || (xPosition != cubeX || yPosition - 1 != cubeY))) {
                 yPosition += -1
                 radio.sendValue("yPos", yPosition)
             }
@@ -72,14 +72,14 @@ input.onButtonPressed(Button.B, function () {
     if (mode == 0) {
         led.unplot(xPosition, yPosition)
         if (UpDown % 2 == 0) {
-            if (xPosition < 9 && (xPosition + 1 != cubeX || yPosition != cubeY)) {
+            if (xPosition < 9 && (cubeX != 9 || (xPosition + 1 != cubeX || yPosition != cubeY))) {
                 xPosition += 1
                 radio.sendValue("xPos", xPosition)
                 radio.sendValue("xPos", xPosition)
                 radio.sendValue("xPos", xPosition)
             }
         } else {
-            if (yPosition < 9 && (xPosition != cubeX || yPosition + 1 != cubeY)) {
+            if (yPosition < 9 && (cubeY != 9 || (xPosition != cubeX || yPosition + 1 != cubeY))) {
                 yPosition += 1
                 radio.sendValue("yPos", yPosition)
                 radio.sendValue("yPos", yPosition)
