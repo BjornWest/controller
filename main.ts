@@ -186,7 +186,7 @@ let yPosition = 0
 let xPosition = 0
 let mode = 0
 mode = 0
-radio.setGroup(1)
+radio.setGroup(10)
 xPosition = 0
 yPosition = 0
 xTarget = -1
