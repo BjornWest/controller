@@ -157,6 +157,8 @@ radio.onReceivedValue(function (name, value) {
         cubeX = value + 5
     } else if (name == "cubeY") {
         cubeY = value + 5
+    } else if (name == "victory") {
+        Youwin = 1
     } else {
     	
     }
@@ -165,7 +167,9 @@ function unplot10x10 (x: number, y: number) {
     radio.sendValue("xUnPlot", x)
     radio.sendValue("yUnPlot", y)
 }
+let victorymessage = 0
 let food = 0
+let Youwin = 0
 let foodTemp = 0
 let run = 0
 let foodY = 0
@@ -199,15 +203,6 @@ loops.everyInterval(500, function () {
     }
 })
 basic.forever(function () {
-    if (mode == 0) {
-        led.plot(xPosition, yPosition)
-    } else if (mode == 1) {
-    	
-    } else {
-    	
-    }
-})
-basic.forever(function () {
     if (mode == 1) {
         if (xpos == foodX && ypos == foodY) {
             length += 1
@@ -236,6 +231,30 @@ basic.forever(function () {
             }
             led.plot(foodX, foodY)
             plot10x10(foodX, foodY)
+        }
+    }
+})
+basic.forever(function () {
+    if (Youwin == 1) {
+        victorymessage = randint(0, 4)
+        if (victorymessage == 0) {
+            basic.showString("Good job buddy")
+        } else if (victorymessage == 1) {
+            basic.showString("You're great")
+        } else if (victorymessage == 2) {
+            basic.showString("You're the best!")
+        } else if (victorymessage == 3) {
+            basic.showString("You are a genius!")
+        } else if (victorymessage == 4) {
+            basic.showString("Good work!")
+        } else if (victorymessage == 5) {
+            basic.showString("Have my babies!")
+        } else if (victorymessage == 6) {
+            basic.showString("W brain")
+        } else if (victorymessage == 7) {
+            basic.showString("Nice work!")
+        } else {
+        	
         }
     }
 })
